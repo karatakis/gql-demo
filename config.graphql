@@ -12,8 +12,6 @@ type Query {
   users: [User] @http(path: "/users")
 }
 
-# Create a user type with the fields returned by the users api
-
 type User {
   id: Int!
   name: String!

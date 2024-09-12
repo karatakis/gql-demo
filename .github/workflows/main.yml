@@ -1,0 +1,15 @@
+name: Deploy to Cloud
+on: [push]
+jobs:
+  Deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        id: deploy-step
+        uses: karatakis/launchpad-action@main
+        with:
+          LAUNCHPAD_URL: pad.karatakis.com:443
+      - name: Print the URL
+        run: |
+          echo "Deployed at: ${{ steps.deploy-step.outputs.DEPLOY_URL }}"
